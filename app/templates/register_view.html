@@ -1,10 +1,10 @@
-<form ng-submit="newUser(user)">
-  <input type="text" ng-model="user.name" placeholder="name">
+<form ng-submit="registerUser(user)">
+  <input type="text" ng-model="user.username" placeholder="name">
   <input type="email" ng-model="user.email" placeholder="email">
   <input type="password" ng-model="user.password" placeholder="password">
-  <input type="password" placeholder="confirm password">
-  <input type="radio"name="userType">employer
+  <!-- <input type="password" placeholder="confirm password"> -->
+  <!-- <input type="radio"name="userType">employer
   <br>
-  <input type="radio"name="userType">chef
+  <input type="radio"name="userType">chef -->
   <button>submit</button>
 </form>

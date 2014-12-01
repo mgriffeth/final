@@ -1,5 +1,5 @@
 (function(){
-  angular.module('CookForMe',['ngRoute'])
+  angular.module('CookForMe',['ngRoute',])
     .constant('Parse_Headers',{
       headers:{
       "X-Parse-Application-Id" : "JOXuzVvxYQHqMZwmbjp3tSE8eJT7jdYhyLL6oMuo",

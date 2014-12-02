@@ -9,7 +9,10 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
-
+header{
+  background-color:HSLA(0, 0%, 93%, 1);
+  
+}
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 600px;
@@ -24,4 +27,25 @@ body {
     line-height: 1;
     letter-spacing: -1px;
   }
+}
+#register-form{
+  overflow:auto;
+  input{
+    float:left;
+    display:block;
+    clear:both;
+  }
+  .radio{
+    float:left;
+    clear:both;
+    input{
+      float:left;
+      margin:6px;
+    }
+  }
+  button{
+    float:left;
+    clear:both;
+  }
+
 }

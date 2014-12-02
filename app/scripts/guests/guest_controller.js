@@ -1,16 +1,18 @@
 (function(){
    angular.module('CookForMe')
-    .controller('GuestController',['$scope','$location','$http','Parse_Headers',function($scope, $location, $http, Parse_Headers){
-      var usersUrl = 'https://api.parse.com/1/users'
+    .controller('GuestController',['$scope','$location','$http','Parse_Headers','AllUsersFactory',
+      function($scope, $location, $http, Parse_Headers, AllUsersFactory){
+      var usersUrl = 'https://api.parse.com/1/users';
 
       $scope.registerUser = function(user){
-        $http.post( usersUrl, user, Parse_Headers ).success(function(){
-          $location.path('/');
-        });
-      }
+        AllUsersFactory.registerUser(user);
+        };
+
+      $scope.userLogIn = function(username, password){
+        AllUsersFactory.userLogIn(username, password);
+      };
 
 
-  }
+    }
   ]);
-
 }());

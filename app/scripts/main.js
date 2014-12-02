@@ -7,6 +7,12 @@
         "Content-Type" : "application/json"
       }
     })
+    // .constant('Login_Headers',{
+    //   headers:{
+    //     "X-Parse-Application-Id" : "JOXuzVvxYQHqMZwmbjp3tSE8eJT7jdYhyLL6oMuo",
+    //     "X-Parse-REST-API-Key" : "uBxYWP3vS8tRCgHT2l2OI0jIf7TawGZCU6quXWTV"
+    //   }
+    // })
     .config(function($routeProvider){
 
       $routeProvider.when('/',{

@@ -24,14 +24,16 @@
         };
 
         var userLogOut = function(user){
-          $cookiesStore.remove('activeUser')
+          $cookiesStore.remove('activeUser');
+          location.path('/');
+          return userCheck();
         }
 
 
         var userCheck = function(user){
           var user = $cookieStore.get('activeUser');
           console.log(user);
-          if(user.type ==="cook"){
+          if(user.type ==="chef"){
             $location.path('/');
             $('#userStatus').html('Logged in as '+ user.username);
           }else if(user.type === "employer"){

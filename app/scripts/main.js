@@ -19,10 +19,20 @@
       controller: 'UserController'
       });
 
-      $routeProvider.when('/register',{
-        templateUrl:'templates/register_view.html',
-        controller: 'UserController'
-      });
+    $routeProvider.when('/register',{
+      templateUrl:'templates/register-view.html',
+      controller: 'UserController'
+    });
+
+    $routeProvider.when('/newdish',{
+      templateUrl:'templates/new-menu-item.html',
+      controller: 'CooksController'
+    });
+
+    $routeProvider.when('/cookProfile/:id',{
+      templateUrl: 'templates/cook-profile.html',
+      controller: 'CooksController'
+    });
 
   });
 }());

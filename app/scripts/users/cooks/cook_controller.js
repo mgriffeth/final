@@ -5,7 +5,9 @@
 
       var baseUrl = 'https://api.parse.com/1/';
       var user = $cookieStore.get('activeUser');
-
+      $http.get(baseUrl + 'users/' + user.objectId, Parse_Headers).success(function(data){
+        $scope.userInfo = data;
+      });
 
       $scope.newDish = function(dish){
         var userId = {};
@@ -21,6 +23,10 @@
           .then(function (){
             console.log('dish Added');
           });
+        };
+
+        $scope.userLogOut = function(user){
+          AllUsersFactory.userLogOut(user);
         };
 
 

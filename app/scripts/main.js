@@ -29,9 +29,14 @@
       controller: 'CooksController'
     });
 
-    $routeProvider.when('/cookProfile/:id',{
+    $routeProvider.when('/cookProfile',{
       templateUrl: 'templates/cook-profile.html',
       controller: 'CooksController'
+    });
+
+    $routeProvider.when('/allcooks',{
+      templateUrl: 'templates/cook-list.html',
+      controller: 'EmployerController'
     });
 
   });

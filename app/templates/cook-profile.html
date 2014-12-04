@@ -1,13 +1,14 @@
-<aside ng-controller="CooksController">
-  <span>Username: {{user.username}}</span>
-  <span>Name: {{user.name}}</span>
-  <span>Speciality: {{user.special}}</span>
-  <ul ng-repeat="menu in user.menus">
+<aside>
+  <button ng-click="userLogOut()">log out</button>
+  <span>Username: {{userInfo.username}}</span>
+  <span>Name: {{userInfo.name}}</span>
+  <span ng-show="userInfo.special">Speciality: {{user.special}}</span>
+  <!-- <ul ng-repeat="menu in user.menus">
     <li>
       <a href=""><span>{{menu.title}}</span></a>
       <p>{{menu.description}}</p>
     </li>
-  </ul>
+  </ul> -->
 
 </aside>
 <img src="" alt="">

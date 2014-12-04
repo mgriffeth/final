@@ -24,26 +24,27 @@
         };
 
         var userLogOut = function(user){
-          $cookiesStore.remove('activeUser');
-          location.path('/');
+          $cookieStore.remove('activeUser');
+          $location.path('/');
           return userCheck();
-        }
+        };
 
 
         var userCheck = function(user){
           var user = $cookieStore.get('activeUser');
           console.log(user);
-          if(user.type ==="chef"){
-            $location.path('/');
-            $('#userStatus').html('Logged in as '+ user.username);
-          }else if(user.type === "employer"){
-            $location.path('/');
-            $('#userStatus').html('Logged in as '+ user.username);
-          }else{
-            $('#userStatus').html('You are not logged in.');
+          if(user){
+            if(user.type ==="chef"){
+              $location.path('/cookProfile/');
+              $('#userStatus').html('Logged in as '+ user.username);
+            }else if(user.type === "employer"){
+              $location.path('/');
+              $('#userStatus').html('Logged in as '+ user.username);
           };
+        }else{
+          $('#userStatus').html('Not logged in...');
         };
-
+      };
 
       return{
         registerUser: registerUser,

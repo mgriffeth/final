@@ -1,6 +1,6 @@
-<ul ng-repeat="cook in cooks">
-  <li>
-  <h3 ng-click="selectCook(cook.objectId)">{{cook.username}}</h3>
+<ul >
+  <li ng-repeat="cook in cooks">
+  <a href="#/singleCook/{{cook.objectId}}"><h3>{{cook.username}}</h3></a>
       <span>{{cook.email}}</span>
   </li>
 </ul>

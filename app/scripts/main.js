@@ -34,6 +34,11 @@
       controller: 'CooksController'
     });
 
+    $routeProvider.when('/singleCook/:cid',{
+      templateUrl: 'templates/single-cook.html',
+      controller: 'SingleCookController'
+    });
+
     $routeProvider.when('/allcooks',{
       templateUrl: 'templates/cook-list.html',
       controller: 'EmployerController'

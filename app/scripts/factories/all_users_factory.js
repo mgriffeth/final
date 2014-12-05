@@ -38,7 +38,7 @@
               $location.path('/cookProfile/');
               $('#userStatus').html('Logged in as '+ user.username);
             }else if(user.type === "employer"){
-              $location.path('/');
+              $location.path('/allcooks');
               $('#userStatus').html('Logged in as '+ user.username);
           };
         }else{

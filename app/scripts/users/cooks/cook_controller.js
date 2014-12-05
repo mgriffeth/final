@@ -12,7 +12,7 @@
 
 
       var dishParam = '?where={"userId":"userInfo.objectId"}'
-      $http.get(baseUrl + 'classes/dishClass/', Parse_Headers).success(function(data){
+      $http.get(baseUrl + 'classes/dishClass/'+ dishParam, Parse_Headers).success(function(data){
         console.log(data);
         $scope.dishes = data.results;
       })

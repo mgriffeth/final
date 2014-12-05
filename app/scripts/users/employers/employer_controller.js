@@ -10,6 +10,13 @@
         console.log(data.results);
       });
 
+    var selectCook = function(cook){
+      var param = '?where={"objectId":"cook"}';
+      $http.get(baseUrl + 'users/' + params, Parse_Headers).success(function(data){
+        console.log(data.results);
+      });
+    }
+
 
     }
   ]);

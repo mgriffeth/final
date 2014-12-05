@@ -5,9 +5,17 @@
 
       var baseUrl = 'https://api.parse.com/1/';
       var user = $cookieStore.get('activeUser');
+
       $http.get(baseUrl + 'users/' + user.objectId, Parse_Headers).success(function(data){
         $scope.userInfo = data;
       });
+
+
+      var dishParam = '?where={"userId":"userInfo.objectId"}'
+      $http.get(baseUrl + 'classes/dishClass/', Parse_Headers).success(function(data){
+        console.log(data);
+        $scope.dishes = data.results;
+      })
 
       $scope.newDish = function(dish){
         var userId = {};
@@ -20,7 +28,8 @@
           dish.owner = user.username;
 
           $http.post(baseUrl +"classes/dishClass", dish, Parse_Headers)
-          .then(function (){
+          .success(function (){
+            $location.path('/cookProfile');
             console.log('dish Added');
           });
         };

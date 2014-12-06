@@ -1,6 +1,8 @@
 <ul >
   <li ng-repeat="cook in cooks">
   <a href="#/singleCook/{{cook.objectId}}"><h3>{{cook.username}}</h3></a>
-      <span>{{cook.email}}</span>
+      <a href="mailto:{{cook.email}}?Subject=Will%20you%20cook%20for%20me?">
+        {{cook.email}}
+      </a>
   </li>
 </ul>

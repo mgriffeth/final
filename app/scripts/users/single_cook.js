@@ -10,12 +10,10 @@
         console.log($scope.singleCook);
       });
 
-      var params = '?where={"userId":"singleCook.objectId"}';
-
-      $http.get(baseUrl + 'classes/dishClass' + params, Parse_Headers).success(function(data){
-        console.log(data);
-        $scope.dishes = data.results;
-
+      $http.get(baseUrl + 'classes/dishClass/', Parse_Headers).success(function(data){
+        console.log(data.results);
+        var allDishes = data.results;
+        $scope.dishes = _.where(allDishes,{userId: $routeParams.cid});
       });
 
   }

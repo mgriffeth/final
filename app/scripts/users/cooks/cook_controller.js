@@ -10,12 +10,11 @@
         $scope.userInfo = data;
       });
 
-
-      var dishParam = '?where={"userId":"userInfo.objectId"}'
-      $http.get(baseUrl + 'classes/dishClass/'+ dishParam, Parse_Headers).success(function(data){
-        console.log(data);
-        $scope.dishes = data.results;
-      })
+      $http.get(baseUrl + 'classes/dishClass/', Parse_Headers).success(function(data){
+        console.log(data.results);
+        var allDishes = data.results;
+          $scope.dishes = _.where(allDishes,{userId: user.objectId});
+      });
 
       $scope.newDish = function(dish){
         var userId = {};
@@ -26,12 +25,15 @@
           dish.ACL = $.extend(userId, { '*': {'read' : true}});
           dish.userId = user.objectId;
           dish.owner = user.username;
-
           $http.post(baseUrl +"classes/dishClass", dish, Parse_Headers)
           .success(function (){
             $location.path('/cookProfile');
             console.log('dish Added');
           });
+        };
+
+        $scope.deleteDish = function(dish){
+          $http.delete(baseUrl + "classes/dishClass/" + dish, Parse_Headers);
         };
 
         $scope.userLogOut = function(user){

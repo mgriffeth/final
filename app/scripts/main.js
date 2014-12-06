@@ -34,6 +34,11 @@
       controller: 'CooksController'
     });
 
+    $routeProvider.when('/editDish/:did',{
+      templateUrl: 'templates/edit-dish.html',
+      controller: 'EditDishController'
+    });
+
     $routeProvider.when('/singleCook/:cid',{
       templateUrl: 'templates/single-cook.html',
       controller: 'SingleCookController'

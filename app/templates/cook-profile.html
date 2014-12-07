@@ -9,8 +9,8 @@
   <ul ng-repeat="dish in dishes">
     <li>
       <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
-      <button ng-click="deleteDish(dish.objectId)">delete {{dish.objectId}}</button>
-      <span ng-show"dish">{{dish.title}} {{dish.userId}}</span>
+      <button ng-click="deleteDish(dish.objectId)">delete</button>
+      <span ng-show"dish">{{dish.title}}</span>
       <p>{{dish.description}}</p>
       <span>{{dish.pricePP| currency}} per person</span>
 

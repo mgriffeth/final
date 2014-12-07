@@ -1,26 +1,35 @@
 <aside>
-  <button ng-click="userLogOut()">log out</button>
+  <!-- <button ng-click="userLogOut()">log out</button> -->
   <a href="#/newdish"><button>add dish</button></a>
-  <span>Username: {{userInfo.username}}</span>
-  <span>Name: {{userInfo.name}}</span>
-  <span ng-show="userInfo.special">Speciality: {{user.special}}</span>
-  <h2>dishes</h2>
+  <a href="#/editProfile"><button>edit profile</button></a>
+  <div>
+    <h2>Info:</h2>
+    <span>Username: {{userInfo.username}}</span>
+    <span>Name: {{userInfo.name}}</span>
+    <span ng-show="userInfo.special">Speciality: {{user.special}}</span>
+  </div>
 
-  <ul ng-repeat="dish in dishes">
-    <li>
-      <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
-      <button ng-click="deleteDish(dish.objectId)">delete</button>
-      <span ng-show"dish">{{dish.title}}</span>
-      <p>{{dish.description}}</p>
-      <span>{{dish.pricePP| currency}} per person</span>
+  <div>
 
-      <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
-    </li>
-  </ul>
+
+  </div>
+
+
+  <div>
+    <h2>dishes</h2>
+    <ul ng-repeat="dish in dishes">
+      <li>
+        <span ng-show"dish">{{dish.title}}</span>
+        <p>{{dish.description}}</p>
+        <span>{{dish.pricePP| currency}} per person</span>
+        <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
+        <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
+        <button ng-click="deleteDish(dish.objectId)">delete</button>
+      </li>
+    </ul>
+  </div>
+
+
 
 
 </aside>
-
-<div>
-
-</div>

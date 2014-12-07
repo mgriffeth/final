@@ -6,11 +6,18 @@
 body {
   background:url('../images/CookBig.jpg');
   background-size: cover;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Comfortaa', cursive;
   color: #333;
 }
 header{
   background-color:HSLA(0, 0%, 93%, 1);
+  overflow:auto;
+  button{
+    @include button(pill);
+    float:right;
+    margin:1px;
+  }
+
 
 }
 .hero-unit {
@@ -27,12 +34,30 @@ header{
     line-height: 1;
     letter-spacing: -1px;
   }
+  button{
+    @include button(pill);
+    float:left;
+    clear:both;
+  }
+  #login{
+    button{
+      float:right;
+      margin:2px;
+    }
+  }
 }
+
+
 #register-form{
   overflow:auto;
   input{
     float:left;
     display:block;
+    clear:both;
+  }
+  button{
+    @include button(pill);
+    float:left;
     clear:both;
   }
   .radio{
@@ -43,10 +68,8 @@ header{
       margin:6px;
     }
   }
-  button{
-    float:left;
-    clear:both;
-  }
+
+
 
 }
 img{

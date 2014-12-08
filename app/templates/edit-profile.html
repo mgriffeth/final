@@ -1,9 +1,22 @@
-<form action="">
+<form ng-submit="editUser(userInfo)">
 
-  <input type="text">
-  <input type="text">
-  <input type="text">
-  <textarea name="" id="" cols="30" rows="10"></textarea>
+  <span ng-model="userInfo.name">Name:{{userInfo.firstName}} {{userInfo.lastName}}</span>
+
+  <br>
+  <input type="text" ng-model="userInfo.firstName" placeholder="firstName">
+  <input type="text" ng-model="userInfo.lastName" placeholder="lastName">
+  <br>
+  <span ng-model="userInfo.username">Username: {{userInfo.username}}</span>
+  <br>
+  <input type="text" ng-model="userInfo.username" placeholder="username" >
+  <br>
+  <span ng-model="userInfo.email">E-mail: {{userInfo.email}}</span>
+  <br>
+  <input type="email" ng-model="userInfo.email" placeholder="email">
+  <br>
+
+  <span>About Me:</span>
+  <textarea ng-model="userInfo.about" placeholder="tell us about yourself"></textarea>
   <button>submit</button>
 
 </form>

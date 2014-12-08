@@ -19,6 +19,7 @@
           $http.get('https://api.parse.com/1/login'+ user + pass , Parse_Headers).success(function(data){
             $cookieStore.put('activeUser', data);
             return userCheck() ;
+            $route.reload();
             $location.path('/');
           });
         };
@@ -27,6 +28,7 @@
           $cookieStore.remove('activeUser');
           $location.path('/');
           return userCheck();
+          $route.reload();
         };
 
 

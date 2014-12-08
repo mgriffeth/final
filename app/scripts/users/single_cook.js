@@ -15,6 +15,10 @@
         console.log(data.results);
         var allDishes = data.results;
         $scope.dishes = _.where(allDishes,{userId: $routeParams.cid});
+        $scope.apps = _.where(allDishes,{userId: $routeParams.cid, course:'appetizer'});
+        $scope.entres = _.where(allDishes,{userId: $routeParams.cid, course:'entre'});
+        $scope.desserts = _.where(allDishes,{userId: $routeParams.cid, course:'dessert'});
+
       });
 
       $scope.toList = function(dish){

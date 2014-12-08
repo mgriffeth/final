@@ -1,23 +1,73 @@
 
-<aside>
+
   <span>Username: {{singleCook.username}}</span>
   <span>Name: {{singleCook.name}}</span>
+  <span>e-mail:<a href="mailto:{{singleCook.email}}?Subject=Will%20you%20cook%20for%20me?">
+    {{singleCook.email}}
+  </a></span>
+
   <span ng-show="userInfo.special">Speciality: {{user.special}}</span>
-  <h2>dishes</h2>
-
-  <ul ng-repeat="dish in dishes">
-    <li>
-      <span>{{dish.title}}</span>
-      <p>{{dish.description}}</p>
-      <span>{{dish.pricePP| currency}} per person</span>
-      <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
-      <button ng-click="toList(dish)">add to list</button>
-    </li>
-  </ul>
 
 
-</aside>
 
 <div>
+  <h2>dishes</h2>
+  <div>
+    <h3>Appetizers:</h3>
+    <ul ng-repeat="dish in apps">
+      <li>
+        <span ng-show"dish">{{dish.title}}</span>
+        <p>{{dish.description}}</p>
+        <span>{{dish.pricePP| currency}} per order</span>
+        <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
+        <input type="checkbox"ng-model="checked">
+        <div ng-if="checked">
+          <span>Number required:</span>
+          <input type="number" placeholder="quantity" min='1'>
+        </div>
+        <br>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Entres:</h3>
+    <ul ng-repeat="dish in entres">
+      <li>
+        <span ng-show"dish">{{dish.title}}</span>
+        <p>{{dish.description}}</p>
+        <span>{{dish.pricePP| currency}} per order</span>
+        <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
+        <input type="checkbox"ng-model="checked">
+        <div ng-if="checked">
+          <span>Number required:</span>
+          <input type="number" placeholder="quantity" min='1'>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Desserts:</h3>
+    <ul ng-repeat="dish in desserts">
+      <li>
+        <span ng-show"dish">{{dish.title}}</span>
+        <p>{{dish.description}}</p>
+        <span>{{dish.pricePP| currency}} per order</span>
+        <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
+        <input type="checkbox"ng-model="checked">
+        <div ng-if="checked">
+          <span>Number required:</span>
+          <input type="number" placeholder="quantity" min='1'>
+        </div>
+        <br>
+      </li>
+    </ul>
+    <br>
+    <span>Date of event:</span>
+    <input type="datetime-local" >
+    <button>send request</button>
+  </div>
 
 </div>

@@ -6,6 +6,7 @@
      var user = $cookieStore.get('activeUser');
      $scope.user = user;
     if(user){
+      $scope.actUser = user.username;
       $('#userStatus').html('Logged in as '+ user.username);
     }else{
       $('#userStatus').html('Not logged in...');

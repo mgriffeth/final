@@ -12,6 +12,11 @@ body {
 header{
   background-color:HSLA(0, 0%, 93%, 1);
   overflow:auto;
+  span{
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
   button{
     @include button(pill);
     float:right;
@@ -46,7 +51,12 @@ header{
     }
   }
 }
-
+#cook-profile{
+  button{
+  float:right;
+  margin:3px;
+  }
+}
 
 #register-form{
   overflow:auto;

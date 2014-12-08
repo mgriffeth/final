@@ -1,4 +1,17 @@
 <form ng-submit="newDish(dish)">
+  <div>
+    <input type="radio" ng-model="dish.course" value="appetizer">
+    <span> Appetizer</span>
+  </div>
+  <div>
+    <input type="radio" ng-model="dish.course" value="entre">
+    <span>Entre</span>
+  </div>
+  <div>
+    <input type="radio" ng-model="dish.course" value="desert">
+    <span>Dessert</span>  
+  </div>
+
   <input type="text" ng-model="dish.title" placeholder="dish title">
   <input type="text" ng-model="dish.pricePP" placeholder="price per person">
   <textarea ng-model="dish.description" placeholder="description"></textarea>

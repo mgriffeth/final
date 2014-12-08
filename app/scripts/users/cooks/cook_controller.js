@@ -26,6 +26,10 @@
         console.log(data.results);
         var allDishes = data.results;
           $scope.dishes = _.where(allDishes,{userId: user.objectId});
+          $scope.apps = _.where(allDishes,{userId: user.objectId, course:'appetizer'});
+          $scope.entres = _.where(allDishes,{userId: user.objectId, course:'entre'});
+          $scope.desserts = _.where(allDishes,{userId: user.objectId, course:'dessert'});
+
       });
 
       $scope.newDish = function(dish){
@@ -53,6 +57,12 @@
 
         $scope.userLogOut = function(user){
           AllUsersFactory.userLogOut(user);
+        };
+
+        $scope.editUser = function(user){
+          $http.put(baseUrl + "users/" + user.objectId, user, User_Headers).success(function(){
+            $location.path('/cookProfile');
+          });
         };
 
 

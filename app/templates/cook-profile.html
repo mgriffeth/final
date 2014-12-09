@@ -24,7 +24,8 @@
       <ul ng-repeat="dish in apps">
         <li>
           <span ng-show"dish">{{dish.title}}</span>
-          <p>{{dish.description}}</p>
+          <p>Description:{{dish.description}}</p>
+          <span>Feeds:{{dish.feeds}}</span>
           <span>{{dish.pricePP| currency}} per order</span>
           <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
           <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
@@ -38,7 +39,8 @@
     <ul ng-repeat="dish in entres">
       <li>
         <span ng-show"dish">{{dish.title}}</span>
-        <p>{{dish.description}}</p>
+        <p>Description:{{dish.description}}</p>
+        <span>Feeds:{{dish.feeds}}</span>
         <span>{{dish.pricePP| currency}} per order</span>
         <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
         <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
@@ -52,7 +54,8 @@
     <ul ng-repeat="dish in desserts">
       <li>
         <span ng-show"dish">{{dish.title}}</span>
-        <p>{{dish.description}}</p>
+        <p>Description:{{dish.description}}</p>
+        <span>Feeds:{{dish.feeds}}</span>
         <span>{{dish.pricePP| currency}} per order</span>
         <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
         <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>

@@ -9,7 +9,9 @@
 
         var registerUser = function(user){
           $http.post( 'https://api.parse.com/1/users', user, Parse_Headers ).success(function(){
-            $location.path('/');
+            $location.path('/')
+            return userLogIn(user.username, user.password);
+            $route.reload();
           });
         };
 

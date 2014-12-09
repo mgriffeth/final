@@ -37,6 +37,12 @@
           // console.log('dish Added');
         });
       }
+      $scope.total = 2;
+
+      var subArray = []
+      // parseInt(dish.pricePP);
+
+
 
   }
   ]);

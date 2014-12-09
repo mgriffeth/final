@@ -2,9 +2,16 @@
 
   <span>Username: {{singleCook.username}}</span>
   <span>Name: {{singleCook.name}}</span>
-  <span>e-mail:<a href="mailto:{{singleCook.email}}?Subject=Will%20you%20cook%20for%20me?">
+  <span>e-mail:
+    <a href="mailto:{{singleCook.email}}?Subject=Will%20you%20cook%20for%20me?">
     {{singleCook.email}}
   </a></span>
+
+  <img ng-src="singleCook.picture" alt="">
+
+  <div>
+    <p>{{singleCook.about}}</p>
+  </div>
 
   <span ng-show="userInfo.special">Speciality: {{user.special}}</span>
 
@@ -21,11 +28,11 @@
         <span>{{dish.pricePP| currency}} per order</span>
         <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
         <input type="checkbox"ng-model="checked">
-        <div ng-if="checked">
-          <span>Number required:</span>
-          <input type="number" placeholder="quantity" min='1'>
+         <div ng-if="checked">
+          <span>amount:</span>
+          <input type="number" ng-model="quant"placeholder="quantity" min="0">
+          <span ng-if="quant">subtotal:<span>{{quant * dish.pricePP | currency }}</span></span>
         </div>
-        <br>
       </li>
     </ul>
   </div>
@@ -40,10 +47,10 @@
         <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
         <input type="checkbox"ng-model="checked">
         <div ng-if="checked">
-          <span>Number required:</span>
-          <input type="number" placeholder="quantity" min='1'>
+          <span>amount:</span>
+          <input type="number" ng-model="quant"placeholder="quantity" min="0">
+          <span ng-if="quant">subtotal:<span ng-model="subTotal">{{quant * dish.pricePP | currency }}</span></span>
         </div>
-
       </li>
     </ul>
   </div>
@@ -58,9 +65,11 @@
         <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
         <input type="checkbox"ng-model="checked">
         <div ng-if="checked">
-          <span>Number required:</span>
-          <input type="number" placeholder="quantity" min='1'>
-        </div>
+          <div ng-if="checked">
+            <span>amount:</span>
+            <input type="number" ng-model="quant"placeholder="quantity" min="0">
+            <span ng-if="quant">subtotal: <span>{{quant * dish.pricePP | currency }}</span></span>
+          </div>
         <br>
       </li>
     </ul>

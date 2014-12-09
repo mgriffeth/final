@@ -8,4 +8,4 @@ To use:
 3. Run npm install.
 
 Tech used:
-Javascript, jQuery, Angular.js, Parse, Bourbon, Bitters, Neat, Html5, Sass.
+Javascript, jQuery, Angular.js, Parse, Bourbon, Bitters, Neat, Html5, Sass, Bower, Npm, Git.

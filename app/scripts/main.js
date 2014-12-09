@@ -34,10 +34,26 @@
       controller: 'CooksController'
     });
 
+    $routeProvider.when('/editProfile',{
+      templateUrl: 'templates/edit-profile.html',
+      controller: 'CooksController'
+    });
+
+    $routeProvider.when('/editDish/:did',{
+      templateUrl: 'templates/edit-dish.html',
+      controller: 'EditDishController'
+    });
+
+    $routeProvider.when('/singleCook/:cid',{
+      templateUrl: 'templates/single-cook.html',
+      controller: 'SingleCookController'
+    });
+
     $routeProvider.when('/allcooks',{
       templateUrl: 'templates/cook-list.html',
       controller: 'EmployerController'
     });
+
 
   });
 }());

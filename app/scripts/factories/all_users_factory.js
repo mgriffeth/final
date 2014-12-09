@@ -9,7 +9,9 @@
 
         var registerUser = function(user){
           $http.post( 'https://api.parse.com/1/users', user, Parse_Headers ).success(function(){
-            $location.path('/');
+            $location.path('/')
+            return userLogIn(user.username, user.password);
+            $route.reload();
           });
         };
 
@@ -19,6 +21,7 @@
           $http.get('https://api.parse.com/1/login'+ user + pass , Parse_Headers).success(function(data){
             $cookieStore.put('activeUser', data);
             return userCheck() ;
+            $route.reload();
             $location.path('/');
           });
         };
@@ -27,6 +30,7 @@
           $cookieStore.remove('activeUser');
           $location.path('/');
           return userCheck();
+          $route.reload();
         };
 
 
@@ -38,7 +42,7 @@
               $location.path('/cookProfile/');
               $('#userStatus').html('Logged in as '+ user.username);
             }else if(user.type === "employer"){
-              $location.path('/');
+              $location.path('/allcooks');
               $('#userStatus').html('Logged in as '+ user.username);
           };
         }else{

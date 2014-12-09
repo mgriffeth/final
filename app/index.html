@@ -10,7 +10,9 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="../bower_components/foundation/scss/foundation.scss" />
     <!-- endbower -->
+    <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
@@ -22,9 +24,11 @@
     <!-- endbuild -->
   </head>
   <body ng-app="CookForMe">
-  <header>
+  <header ng-controller="NavController">
       <span id="userStatus"></span>
-    </header>
+      <a  ng-hide="actUser" href="#/login"><button>login</button></a>
+      <button ng-show="actUser"ng-click="userLogOut()">log out</button>
+  </header>
     <div class="hero-unit" ng-view >
 
     </div>
@@ -38,15 +42,20 @@
     <script src="../bower_components/restangular/dist/restangular.js"></script>
     <script src="../bower_components/angular-route/angular-route.js"></script>
     <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/foundation/js/foundation.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/nav_controller.js"></script>
         <script src="scripts/factories/all_users_factory.js"></script>
         <script src="scripts/users/users_controller.js"></script>
         <script src="scripts/users/cooks/cook_controller.js"></script>
         <script src="scripts/users/employers/employer_controller.js"></script>
+        <script src="scripts/users/single_cook.js"></script>
+        <script src="scripts/edit_dish_controller.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

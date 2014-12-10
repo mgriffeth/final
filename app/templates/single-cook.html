@@ -7,7 +7,7 @@
     {{singleCook.email}}
   </a></span>
 
-  <img ng-src="singleCook.picture" alt="">
+  <img ng-src="singleCook.picture">
 
   <div>
     <h2>About</h2>
@@ -29,16 +29,15 @@
         <span>Feeds:{{dish.feeds}}</span>
         <span>{{dish.pricePP| currency}} per order</span>
         <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
-        <span>select</span><input type="checkbox"ng-model="checked">
-         <div ng-if="checked">
-          <span>amount:</span>
-          <input type="number" ng-model="quant"placeholder="quantity" min="0">
-          <span ng-if="quant">for<span>{{quant * dish.pricePP | currency }}</span></span>
+        <span>select</span><input type="checkbox"ng-model="dish.checked">
+         <div ng-if="dish.checked">
+        <span>amount:</span>
+        <input type="number" ng-model="dish.quant"placeholder="quantity" min="0">
+        <span ng-if="dish.quant">for<span>{{dish.quant * dish.pricePP | currency }}</span></span>
         </div>
       </li>
     </ul>
   </div>
-
   <div>
     <h3>Entres:</h3>
     <ul ng-repeat="dish in entres">
@@ -48,11 +47,11 @@
         <span>Feeds:{{dish.feeds}}</span>
         <span>{{dish.pricePP| currency}} per order</span>
         <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
-        <span>select</span><input type="checkbox"ng-model="checked">
-        </label><div ng-if="checked">
+        <span>select</span><input type="checkbox"ng-model="dish.checked">
+      </label><div ng-if="dish.checked">
           <span>amount:</span>
-          <input type="number" ng-model="quant"placeholder="quantity" min="0">
-          <span ng-if="quant">for<span ng-model="subTotal">{{quant * dish.pricePP | currency }}</span></span>
+          <input type="number" ng-model="dish.quant"placeholder="quantity" min="0">
+          <span ng-if="dish.quant">for<span>{{dish.quant * dish.pricePP | currency }}</span></span>
         </div>
       </li>
     </ul>
@@ -67,19 +66,23 @@
         <span>Feeds:{{dish.feeds}}</span>
         <span>{{dish.pricePP| currency}} per order</span>
         <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
-        <span>select</span><input type="checkbox"ng-model="checked">
-        <div ng-if="checked">
-          <div ng-if="checked">
+        <span>select</span><input type="checkbox"ng-model="dish.checked">
+          <div ng-if="dish.checked">
             <span>amount:</span>
-            <input type="number" ng-model="quant"placeholder="quantity" min="0">
-            <span ng-if="quant">for<span>{{quant * dish.pricePP | currency }}</span></span>
-          </div>
+            <input type="number" ng-model="dish.quant"placeholder="quantity" min="0">
+            <span ng-if="dish.quant">for<span>{{dish.quant * dish.pricePP | currency }}</span></span>
+        </div>
+
         <br>
       </li>
     </ul>
     <br>
-    <span>Date of event:</span>
-    <input type="datetime-local" >
+
+    <div>
+    <button ng-click="calc(dishes)">calculate</button>
+    <br>
+    <!-- <span>Date of event:</span>
+    <input type="datetime-local" ng-model="dish.date"> -->
     <button>send request</button>
   </div>
 

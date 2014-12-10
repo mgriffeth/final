@@ -1,16 +1,19 @@
  // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
+@import "../../base/base";
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
 body {
+  @include outer-container;
   background:url('../images/CookBig.jpg');
+
   background-size: cover;
   font-family: 'Comfortaa', cursive;
   color: #333;
 }
 header{
-  background-color:HSLA(0, 0%, 93%, 1);
+  background-color:HSLA(0, 0%, 95%, .9);
   overflow:auto;
   span{
     display: inline-block;
@@ -18,7 +21,7 @@ header{
     margin-left: 10px;
   }
   button{
-    @include button(pill);
+    @include button;
     float:right;
     margin:1px;
   }
@@ -26,12 +29,14 @@ header{
 
 }
 .hero-unit {
+@include span-columns(12);
   margin: 50px auto 0 auto;
-  width: 600px;
+  /* width: 600px; */
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color: #eee;
+  background-color:HSLA(0, 0%, 95%, .9);
+  color:black;
   border-radius: 6px;
   padding: 60px;
   h1 {
@@ -40,7 +45,7 @@ header{
     letter-spacing: -1px;
   }
   button{
-    @include button(pill);
+    @include button;
     float:left;
     clear:both;
   }
@@ -67,7 +72,7 @@ header{
     clear:both;
   }
   button{
-    @include button(pill);
+    @include button;
     float:left;
     clear:both;
   }

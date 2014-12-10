@@ -29,7 +29,7 @@
       controller: 'CooksController'
     });
 
-    $routeProvider.when('/cookProfile',{
+    $routeProvider.when('/cookProfile/',{
       templateUrl: 'templates/cook-profile.html',
       controller: 'CooksController'
     });

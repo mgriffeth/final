@@ -1,25 +1,42 @@
  // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
+@import "../../base/base";
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
 body {
+  @include outer-container;
   background:url('../images/CookBig.jpg');
+
   background-size: cover;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Comfortaa', cursive;
   color: #333;
 }
 header{
-  background-color:HSLA(0, 0%, 93%, 1);
-  
+  background-color:HSLA(0, 0%, 95%, .9);
+  overflow:auto;
+  span{
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+  button{
+    @include button;
+    float:right;
+    margin:1px;
+  }
+
+
 }
 .hero-unit {
+@include span-columns(12);
   margin: 50px auto 0 auto;
-  width: 600px;
+  /* width: 600px; */
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color: #eee;
+  background-color:HSLA(0, 0%, 95%, .9);
+  color:black;
   border-radius: 6px;
   padding: 60px;
   h1 {
@@ -27,12 +44,36 @@ header{
     line-height: 1;
     letter-spacing: -1px;
   }
+  button{
+    @include button;
+    float:left;
+    clear:both;
+  }
+  #login{
+    button{
+      float:right;
+      margin:2px;
+    }
+  }
 }
+#cook-profile{
+  overflow:auto;
+  button{
+  float:right;
+  margin:3px;
+  }
+}
+
 #register-form{
   overflow:auto;
   input{
     float:left;
     display:block;
+    clear:both;
+  }
+  button{
+    @include button;
+    float:left;
     clear:both;
   }
   .radio{
@@ -43,9 +84,11 @@ header{
       margin:6px;
     }
   }
-  button{
-    float:left;
-    clear:both;
-  }
 
+
+
+}
+img{
+  height:250px;
+  width:250px;
 }

@@ -1,3 +1,11 @@
 ## Yo, I'm a Readme
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+My final project for The IronYard!
+
+To use:
+1. Clone this repo.
+2. Run Bower install.
+3. Run npm install.
+
+Tech used:
+Javascript, jQuery, Angular.js, Parse, Bourbon, Bitters, Neat, Html5, Sass, Bower, Npm, Git.

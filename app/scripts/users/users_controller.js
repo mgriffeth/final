@@ -4,6 +4,11 @@
       function($scope, $location, $http, Parse_Headers, AllUsersFactory){
       var usersUrl = 'https://api.parse.com/1/users';
 
+      $http.get(usersUrl, Parse_Headers).success(function(data){
+        console.log(data.results);
+        $scope.cooks = data.results;
+      })
+
       $scope.registerUser = function(user){
         AllUsersFactory.registerUser(user);
         };

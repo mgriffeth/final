@@ -1,0 +1,89 @@
+
+
+  <span>Username: {{singleCook.username}}</span>
+  <span>Name: {{singleCook.firstName}} {{singleCook.lastName}}</span>
+  <span>e-mail:
+    <a href="mailto:{{singleCook.email}}?Subject=Will%20you%20cook%20for%20me?">
+    {{singleCook.email}}
+  </a></span>
+
+  <img ng-src="singleCook.picture">
+
+  <div>
+    <h2>About</h2>
+    <p>{{singleCook.about}}</p>
+  </div>
+
+  <span ng-show="userInfo.special">Speciality: {{user.special}}</span>
+
+
+
+<div>
+  <h2>dishes</h2>
+  <div>
+    <h3>Appetizers:</h3>
+    <ul ng-repeat="dish in apps">
+      <li>
+        <span ng-show"dish">{{dish.title}}</span>
+        <p>{{dish.description}}</p>
+        <span>Feeds:{{dish.feeds}}</span>
+        <span>{{dish.pricePP| currency}} per order</span>
+        <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
+        <span>select</span><input type="checkbox"ng-model="dish.checked">
+         <div ng-if="dish.checked">
+        <span>amount:</span>
+        <input type="number" ng-model="dish.quant"placeholder="quantity" min="0">
+        <span ng-if="dish.quant">for<span>{{dish.quant * dish.pricePP | currency }}</span></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3>Entres:</h3>
+    <ul ng-repeat="dish in entres">
+      <li>
+        <span ng-show"dish">{{dish.title}}</span>
+        <p>{{dish.description}}</p>
+        <span>Feeds:{{dish.feeds}}</span>
+        <span>{{dish.pricePP| currency}} per order</span>
+        <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
+        <span>select</span><input type="checkbox"ng-model="dish.checked">
+      </label><div ng-if="dish.checked">
+          <span>amount:</span>
+          <input type="number" ng-model="dish.quant"placeholder="quantity" min="0">
+          <span ng-if="dish.quant">for<span>{{dish.quant * dish.pricePP | currency }}</span></span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Desserts:</h3>
+    <ul ng-repeat="dish in desserts">
+      <li>
+        <span ng-show"dish">{{dish.title}}</span>
+        <p>{{dish.description}}</p>
+        <span>Feeds:{{dish.feeds}}</span>
+        <span>{{dish.pricePP| currency}} per order</span>
+        <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
+        <span>select</span><input type="checkbox"ng-model="dish.checked">
+          <div ng-if="dish.checked">
+            <span>amount:</span>
+            <input type="number" ng-model="dish.quant"placeholder="quantity" min="0">
+            <span ng-if="dish.quant">for<span>{{dish.quant * dish.pricePP | currency }}</span></span>
+        </div>
+
+        <br>
+      </li>
+    </ul>
+    <br>
+
+    <div>
+    <button ng-click="calc(dishes)">calculate</button>
+    <br>
+    <!-- <span>Date of event:</span>
+    <input type="datetime-local" ng-model="dish.date"> -->
+    <button>send request</button>
+  </div>
+
+</div>

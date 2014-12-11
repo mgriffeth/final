@@ -1,14 +1,23 @@
-<form action="">
-  <span>Title:</span>
-  <input type="text" ng-model="dish.title" placeholder="title">
-  <span>Price per person:</span>
-  <input type="number" ng-model="dish.pricePP" placeholder="price">
-  <span>Feeds:</span>
-  <input type="number" ng-model="dish.feeds" placeholder="no. of people">
-  <span>Description:</span>
-  <textarea ng-model="dish.description" placeholder="description"></textarea>
+<form class="dish-form" action="">
+  <div class="form-input">
+    <span>Title:</span>
+    <input type="text" ng-model="dish.title" placeholder="title">
+    <span>Price per order:</span>
+    <input type="number" ng-model="dish.pricePP" placeholder="price">
+    <span>Feeds:</span>
+    <input type="number" ng-model="dish.feeds" placeholder="no. of people">
+    <div class="form-desc">
+      <span>Description:</span>
+      <textarea ng-model="dish.description" placeholder="description"></textarea>
+    </div>
+  </div>
+
+
+<div class="form-pic">
+  <img id="dish-pic" ng-src="{{dish.picture}}" alt="">
   <span>Image:</span>
-  <img ng-src="{{dish.picture}}" alt="">
   <input type="text"ng-model="dish.picture" placeholder="image of dish">
+</div>
+
   <button ng-click="edit(dish)">submit changes</button>
 </form>

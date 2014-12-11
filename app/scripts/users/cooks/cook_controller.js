@@ -20,7 +20,7 @@
 
       $http.get(baseUrl + 'users/' + user.objectId, Parse_Headers).success(function(data){
         $scope.userInfo = data;
-        
+
 
       });
 
@@ -66,7 +66,9 @@
             $location.path('/cookProfile');
           });
         };
-
+        // $scope.goEdit = function(id){
+        //   $location.path('/editDish/' + id);
+        // }
 
 
     }]);

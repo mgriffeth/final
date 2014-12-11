@@ -1,7 +1,7 @@
 (function(){
   angular.module('CookForMe')
-    .factory('AllUsersFactory',['$http','$location','Parse_Headers','$cookieStore','$cookies',
-      function ($http, $location, Parse_Headers, $cookieStore, $cookies){
+    .factory('AllUsersFactory',['$http','$location','Parse_Headers','$cookieStore','$cookies','$window',
+      function ($http, $location, Parse_Headers, $cookieStore, $cookies, $window){
 
         var baseUrl = 'https://api.parse.com/1/';
 
@@ -30,7 +30,7 @@
           $cookieStore.remove('activeUser');
           $location.path('/');
           return userCheck();
-          $route.reload();
+
         };
 
 
@@ -39,14 +39,15 @@
           console.log(user);
           if(user){
             if(user.type ==="chef"){
+              $('#userStatus').html('Logged in as '+ user.username);
               $location.path('/cookProfile/');
-              $('#userStatus').html('Logged in as '+ user.username);
             }else if(user.type === "employer"){
-              $location.path('/allcooks');
               $('#userStatus').html('Logged in as '+ user.username);
+              $location.path('/allcooks');
           };
         }else{
           $('#userStatus').html('Not logged in...');
+          $window.reload();
         };
       };
 

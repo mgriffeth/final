@@ -10,7 +10,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
-    <link rel="stylesheet" href="../bower_components/foundation/css/foundation.css" />
+
     <!-- endbower -->
     <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700,300' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
@@ -26,8 +26,10 @@
   <body ng-app="CookForMe">
   <header ng-controller="NavController">
       <span id="userStatus"></span>
+      <a href="#/allcooks"><button ng-show="actUser">all cooks</button></a>
       <a  ng-hide="actUser" href="#/login"><button>login</button></a>
       <button ng-show="actUser"ng-click="userLogOut()">log out</button>
+
   </header>
     <div class="hero-unit" ng-view >
 
@@ -45,7 +47,11 @@
     <script src="../bower_components/fastclick/lib/fastclick.js"></script>
     <script src="../bower_components/jquery.cookie/jquery.cookie.js"></script>
     <script src="../bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+<<<<<<< HEAD
     <script src="../bower_components/foundation/js/foundation.js"></script>
+=======
+
+>>>>>>> matt
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -1,7 +1,7 @@
 (function(){
   angular.module('CookForMe')
-    .controller('CooksController',['$scope','$location','$http','Parse_Headers','AllUsersFactory','$cookieStore','$cookies', '$route',
-    function($scope,$location, $http, Parse_Headers, AllUsersFactory, $cookieStore, $cookies, $route){
+    .controller('CooksController',['$scope','$location','$http','Parse_Headers','AllUsersFactory','$cookieStore','$cookies', '$route','$routeParams',
+    function($scope,$location, $http, Parse_Headers, AllUsersFactory, $cookieStore, $cookies, $route, $routeParams){
 
       var baseUrl = 'https://api.parse.com/1/';
       var user = $cookieStore.get('activeUser');
@@ -16,10 +16,12 @@
     };
 
 
-
+    var param = $routeParams;
 
       $http.get(baseUrl + 'users/' + user.objectId, Parse_Headers).success(function(data){
         $scope.userInfo = data;
+        
+
       });
 
       $http.get(baseUrl + 'classes/dishClass/', Parse_Headers).success(function(data){

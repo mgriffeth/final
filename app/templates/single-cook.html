@@ -21,8 +21,8 @@
 
   </div>
 
-  <h2>Dishes</h2>
-  <br>
+  <h2>Dishes:</h2>
+  
   <br>
   <div class-"single-all-dishes">
 
@@ -98,11 +98,12 @@
       </ul>
     </div>
     <div class="foot-buttons">
+      <button>send request</button>
       <button ng-click="calc(dishes)">calculate</button>
-      <span>total: {{total | currency}}</span>
+      <span id="total">total: {{total | currency}}</span>
       <!-- <span>Date of event:</span>
       <input type="datetime-local" ng-model="dish.date"> -->
-      <button>send request</button>
+
     </div>
 
 </div>

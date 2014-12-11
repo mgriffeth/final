@@ -11,7 +11,7 @@
           $http.post( 'https://api.parse.com/1/users', user, Parse_Headers ).success(function(){
             $location.path('/')
             return userLogIn(user.username, user.password);
-            $route.reload();
+            location.reload();
           });
         };
 
@@ -21,8 +21,8 @@
           $http.get('https://api.parse.com/1/login'+ user + pass , Parse_Headers).success(function(data){
             $cookieStore.put('activeUser', data);
             return userCheck() ;
-            $route.reload();
             $location.path('/');
+            location.reload();
           });
         };
 
@@ -41,13 +41,16 @@
             if(user.type ==="chef"){
               $('#userStatus').html('Logged in as '+ user.username);
               $location.path('/cookProfile/');
+              location.reload();
             }else if(user.type === "employer"){
               $('#userStatus').html('Logged in as '+ user.username);
               $location.path('/allcooks');
+              location.reload();
           };
         }else{
           $('#userStatus').html('Not logged in...');
-          $window.reload();
+          location.reload();
+          // $window.reload();
         };
       };
 

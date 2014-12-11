@@ -7,8 +7,8 @@
 body {
   @include outer-container;
   background:url('../images/CookBig.jpg');
-
-  background-size: cover;
+  /* background:black; */
+  background-size: 100%;
   font-family: 'Comfortaa', cursive;
   color: #333;
 }
@@ -40,6 +40,7 @@ header{
   border-radius: 6px;
   padding: 60px;
   h1 {
+
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
@@ -49,6 +50,10 @@ header{
     float:left;
     clear:both;
   }
+  img{
+    height:250px;
+  }
+
   #login{
     button{
       float:right;
@@ -56,39 +61,199 @@ header{
     }
   }
 }
+
+
+
+
+//Profile///////////////
 #cook-profile{
   overflow:auto;
-  button{
-  float:right;
-  margin:3px;
-  }
-}
-
-#register-form{
-  overflow:auto;
-  input{
-    float:left;
-    display:block;
-    clear:both;
-  }
-  button{
-    @include button;
-    float:left;
-    clear:both;
-  }
-  .radio{
-    float:left;
-    clear:both;
-    input{
-      float:left;
-      margin:6px;
+   .profileBtn{
+    a{
+      float:right;
+      margin:3px;
     }
   }
+  .info{
+    @include span-columns(6);
+    float:left;
+  }
+  .about{
+    @include span-columns(6);
+    float:left;
+  }
+  img{
+    float:right;
+    margin-bottom:10px;
+  }
+  .all-dishes{
+    @include span-columns(12);
+    overflow:auto;
+    h3{
+      margin-bottom:20px;
+    }
+    .app{
+      @include span-columns(12);
+      float:left;
+      display:block;
+    }
+    .entre{
+      @include span-columns(12);
+      float:left;
+      display:block;
+    }
+    .dessert{
+      @include span-columns(12);
+      float:left;
+      display:block;
+    }
+  }
+  ul{
+    @include span-columns(12);
+    .dish{
+      /* @include span-columns(12); */
+      list-style:none;
+      overflow:hidden;
+      /* background-color:HSLA(0, 0%, 95%, .9); */
+      border-top-style:solid;
+      border-bottom-style:solid;
+      border-width:1px;
+      margin:10px;
+      img{
+        float:right;
+        margin-top: -197px;
+        margin-bottom:10px;
+      }
+      .dish-info{
+        @include span-columns(6);
+        float:left;
+        span{
+          display:block;
+        }
+        p{
+          margin-left:4em;
+          height: 105px;
+        }
+      }
+      .dish-btn{
+        @include span-columns(6);
+        overflow:auto;
+        float:left;
+        clear:left;
+        button{
+          @include span-columns(3);
+          display:inline-block;
+          float:left;
+          .deleteBtn{
+            float:right;
+          }
 
+        }
+      }
+    }
+  }
+}
+.cook-list{
+  @include span-columns(12);
+  list-style: none;
+  li{
+    @include span-columns(12);
+    border-top-style:solid;
+    border-bottom-style:solid;
+    border-width:1px;
+    margin:3px;
+    .list-info{
+    @include span-columns(6);
+    overflow:auto;
+    }
 
+    .cook-pic{
+      float:right;
+      height:110px;
+      margin-top:1px;
+    }
+
+  }
+}
+
+.single-info{
+  @include span-columns(6);
+  float:left;
 
 }
-img{
-  height:250px;
-  width:250px;
+.single-about{
+  @include span-columns(6);
+  /* float:left; */
+}
+.single-pic{
+  @include span-columns(6);
+
+}
+
+.single-all-dishes{
+  @include span-columns(12);
+  margin-top:1px;
+  overflow:auto;
+  h3{
+    margin-bottom:20px;
+  }
+  .app{
+    @include span-columns(12);
+    float:left;
+    display:block;
+  }
+  .entre{
+    @include span-columns(12);
+    float:left;
+    display:block;
+  }
+  .dessert{
+    @include span-columns(12);
+    float:left;
+    display:block;
+  }
+}
+ul{
+  @include span-columns(12);
+  .dish{
+    /* @include span-columns(12); */
+    list-style:none;
+    overflow:hidden;
+    /* background-color:HSLA(0, 0%, 95%, .9); */
+    border-top-style:solid;
+    border-bottom-style:solid;
+    border-width:1px;
+    margin:10px;
+    img{
+      float:right;
+      margin-top: 10px;
+      margin-bottom:10px;
+    }
+    .dish-info{
+      @include span-columns(6);
+      float:left;
+      span{
+        display:block;
+      }
+      p{
+        margin-left:4em;
+        height: 105px;
+      }
+    }
+    .dish-btn{
+      @include span-columns(6);
+      overflow:auto;
+      float:left;
+      clear:left;
+      button{
+        @include span-columns(3);
+        display:inline-block;
+        float:left;
+        .deleteBtn{
+          float:right;
+        }
+
+      }
+    }
+  }
 }

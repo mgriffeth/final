@@ -26,8 +26,10 @@
   <body ng-app="CookForMe">
   <header ng-controller="NavController">
       <span id="userStatus"></span>
+      <a href="#/allcooks"><button ng-show="actUser">all cooks</button></a>
       <a  ng-hide="actUser" href="#/login"><button>login</button></a>
       <button ng-show="actUser"ng-click="userLogOut()">log out</button>
+
   </header>
     <div class="hero-unit" ng-view >
 

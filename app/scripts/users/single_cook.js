@@ -6,7 +6,7 @@
       var baseUrl = 'https://api.parse.com/1/';
 
 
-      $http.get(baseUrl + 'users/' + $routeParams, Parse_Headers).success(function(data){
+      $http.get(baseUrl + 'users/' + $routeParams.cid, Parse_Headers).success(function(data){
         $scope.singleCook = data;
         console.log($scope.singleCook);
       });
@@ -43,20 +43,28 @@
       }
 
       $scope.calc = function(dishes){
-        var dishes = dishes,results;
-        // console.log(dishes);
+        var dishes = dishes;
+        $scope.total = 0;
         var checked = _.where(dishes, {checked: true});
-        prices = _.pick(dishes, 'pricePP')
-        console.log(checked);
-        // checked.forEach(function(x){
-        //   $scope.items =_.values(x);
-        //   console.log($scope.items);
-        //   itemCost = [x.pricePP * x.quant];
-        //   console.log(itemCost);
-        //   var costArray = _.map(itemCost);
-        //   console.log(costArray);
-        //
-        // })
+        // console.log(checked);
+
+
+        checked.forEach(function(x){
+
+          if (x.quant > 0){
+            $scope.total += parseInt(x.pricePP, 10) * parseInt(x.quant, 10);
+          }
+
+
+
+          //  $scope.items =_.values(x);
+          // console.log(x);
+          // x.itemCost = x.pricePP * x.quant;
+
+
+
+        });
+        console.log($scope.total);
 
       }
 

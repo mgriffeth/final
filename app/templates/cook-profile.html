@@ -1,65 +1,90 @@
 <div id="cook-profile">
   <!-- <button ng-click="userLogOut()">log out</button> -->
-  <a href="#/newdish"><button>add dish</button></a>
-  <a href="#/editProfile"><button>edit profile</button></a>
-  <div>
-    <h2>Info:</h2>
+  <div class="profileBtn">
+    <a href="#/newdish"><button>add dish</button></a>
+    <a href="#/editProfile"><button>edit profile</button></a>
+  </div>
+
+  <div class="info">
+    <h3> {{userInfo.firstName}} {{userInfo.lastName}}</h3>
+
+    <br>
     <span>Username: {{userInfo.username}}</span>
-    <span>Name: {{userInfo.firstName}} {{userInfo.lastName}}</span>
+    <br>
     <!-- <span ng-show="userInfo.special">Speciality: {{user.special}}</span> -->
   </div>
-    <img src="userInfo.picture" alt="">
-  <div>
+    <img ng-src="{{userInfo.picture}}" alt="">
+  <div ng-if="userInfo.about" class="about">
     <h2>about:</h2>
     <p>{{userInfo.about}}</p>
 
   </div>
 
 
-  <div>
-    <h2>dishes</h2>
+  <div class="all-dishes">
 
-    <div>
+    <div class="app">
       <h3>Appetizers:</h3>
-      <ul ng-repeat="dish in apps">
-        <li>
-          <span ng-show"dish">{{dish.title}}</span>
-          <p>Description:{{dish.description}}</p>
-          <span>Feeds:{{dish.feeds}}</span>
-          <span>{{dish.pricePP| currency}} per order</span>
+      <ul >
+        <li ng-repeat="dish in apps" class="dish">
+          <div class="dish-info">
+            <h4>{{dish.title}}</h4>
+            <p>{{dish.description}}</p>
+            <span>Feeds:{{dish.feeds}}</span>
+            <span>{{dish.pricePP| currency}} per order</span>
+
+          </div>
+          <div class="dish-btn">
+            <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
+            <button class="deleteBtn" ng-click="deleteDish(dish.objectId)">delete</button>
+          </div>
           <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
-          <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
-          <button ng-click="deleteDish(dish.objectId)">delete</button>
+
+
         </li>
       </ul>
     </div>
 
-  <div>
+  <div class="entre">
     <h3>Entres:</h3>
-    <ul ng-repeat="dish in entres">
-      <li>
-        <span ng-show"dish">{{dish.title}}</span>
-        <p>Description:{{dish.description}}</p>
-        <span>Feeds:{{dish.feeds}}</span>
-        <span>{{dish.pricePP| currency}} per order</span>
+    <ul >
+      <li ng-repeat="dish in entres" class="dish">
+        <div class="dish-info">
+
+          <h4>{{dish.title}}</h4>
+          <p>{{dish.description}}</p>
+          <span>Feeds:{{dish.feeds}}</span>
+          <span>{{dish.pricePP| currency}} per order</span>
+
+        </div>
+        <div class="dish-btn">
+          <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
+          <button ng-click="deleteDish(dish.objectId)">delete</button>
+        </div>
         <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
-        <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
-        <button ng-click="deleteDish(dish.objectId)">delete</button>
+
       </li>
     </ul>
   </div>
 
-  <div>
+  <div class="dessert">
     <h3>Desserts:</h3>
-    <ul ng-repeat="dish in desserts">
-      <li>
-        <span ng-show"dish">{{dish.title}}</span>
-        <p>Description:{{dish.description}}</p>
-        <span>Feeds:{{dish.feeds}}</span>
-        <span>{{dish.pricePP| currency}} per order</span>
+    <ul >
+      <li ng-repeat="dish in desserts" class="dish">
+        <div class="dish-info">
+          <h4>{{dish.title}}</h4>
+          <p>{{dish.description}}</p>
+          <span>Feeds:{{dish.feeds}}</span>
+          <span>{{dish.pricePP| currency}} per order</span>
+
+        </div>
+        <div class="dish-btn">
+          <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
+          <button ng-click="deleteDish(dish.objectId)">delete</button>
+        </div>
         <img ng-show="dish.picture"ng-src="{{dish.picture}}" alt="">
-        <a href="#/editDish/{{dish.objectId}}"><button>edit</button></a>
-        <button ng-click="deleteDish(dish.objectId)">delete</button>
+
+
       </li>
     </ul>
   </div>

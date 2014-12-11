@@ -30,7 +30,7 @@
           $cookieStore.remove('activeUser');
           $location.path('/');
           return userCheck();
-          
+
         };
 
 
@@ -39,14 +39,11 @@
           console.log(user);
           if(user){
             if(user.type ==="chef"){
+              $('#userStatus').html('Logged in as '+ user.username);
               $location.path('/cookProfile/');
-              $window.reload();
-              $('#userStatus').html('Logged in as '+ user.username);
-
             }else if(user.type === "employer"){
-              $location.path('/allcooks');
               $('#userStatus').html('Logged in as '+ user.username);
-              $window.reload();
+              $location.path('/allcooks');
           };
         }else{
           $('#userStatus').html('Not logged in...');

@@ -9,13 +9,15 @@ search: <input ng-model="searchText">
   <button>first</button>
   <button>last</button>
 </div> -->
-<ul >
-  <li id="cooklist" ng-repeat="cook in cooks | filter:searchText:strict">
-  <a href="#/singleCook/{{cook.objectId}}"><h3>{{cook.firstName}} {{cook.lastName}}</h3></a>
-      <a href="mailto:{{cook.email}}?Subject=Will%20you%20cook%20for%20me?">
-        {{cook.email}}
-      </a>
-      <p>{{cook.about}}</p>
-      <img ng-if="cook.picture" ng-src="cook.picture" alt="">
+<ul class="cook-list">
+  <li ng-repeat="cook in cooks | filter:searchText:strict">
+      <div class="list-info">
+        <a href="#/singleCook/{{cook.objectId}}"><h3>{{cook.firstName}} {{cook.lastName}}</h3></a>
+        <a href="mailto:{{cook.email}}?Subject=Will%20you%20cook%20for%20me?">
+          {{cook.email}}
+        </a>
+        <!-- <p>{{cook.about}}</p> -->
+      </div>
+      <a href="#/singleCook/{{cook.objectId}}"><img class="cook-pic" ng-if="cook.picture" ng-src="{{cook.picture}}" alt=""></a>
   </li>
 </ul>

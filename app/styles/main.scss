@@ -197,21 +197,8 @@ header{
   h3{
     margin-bottom:20px;
   }
-  .app{
-    @include span-columns(12);
-    float:left;
-    display:block;
-  }
-  .entre{
-    @include span-columns(12);
-    float:left;
-    display:block;
-  }
-  .dessert{
-    @include span-columns(12);
-    float:left;
-    display:block;
-  }
+
+
 }
 ul{
   @include span-columns(12);
@@ -238,6 +225,11 @@ ul{
       p{
         margin-left:4em;
         height: 105px;
+      }
+    }
+    .clicked-menu{
+     .input{
+        @include span-columns(1);
       }
     }
     .dish-btn{

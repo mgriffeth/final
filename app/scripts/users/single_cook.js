@@ -47,28 +47,15 @@
         $scope.total = 0;
         var checked = _.where(dishes, {checked: true});
         // console.log(checked);
-
-
         checked.forEach(function(x){
-
           if (x.quant > 0){
             $scope.total += parseInt(x.pricePP, 10) * parseInt(x.quant, 10);
           }
-
-
-
-          //  $scope.items =_.values(x);
-          // console.log(x);
-          // x.itemCost = x.pricePP * x.quant;
-
-
-
         });
         console.log($scope.total);
+      };
 
-      }
-
-      // parseInt(dish.pricePP);
+      
 
 
 

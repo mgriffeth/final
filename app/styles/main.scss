@@ -140,6 +140,11 @@ header{
     /* margin-top: -125px; */
     margin-left: 7em;
   }
+  .prof-pic img{
+    float: right;
+    /* margin-top: -125px; */
+    margin-left: 7em;
+  }
   .all-dishes{
     @include span-columns(12);
     overflow:auto;

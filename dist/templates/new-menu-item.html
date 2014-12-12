@@ -1,0 +1,27 @@
+<form ng-submit="newDish(dish)">
+  <div>
+    <input type="radio" ng-model="dish.course" value="appetizer">
+    <span> Appetizer</span>
+  </div>
+  <div>
+    <input type="radio" ng-model="dish.course" value="entre">
+    <span>Entre</span>
+  </div>
+  <div>
+    <input type="radio" ng-model="dish.course" value="desert">
+    <span>Dessert</span>
+  </div>
+
+  <span>Title:</span>
+  <input type="text" ng-model="dish.title" placeholder="title">
+  <span>Price per person:</span>
+  <input type="number" ng-model="dish.pricePP" placeholder="price">
+  <span>Feeds:</span>
+  <input type="number" ng-model="dish.feeds" placeholder="no. of people">
+  <span>Description:</span>
+  <textarea ng-model="dish.description" placeholder="description"></textarea>
+  <span>Image:</span>
+  <input type="text"ng-model="dish.picture" placeholder="image of dish">
+  <button>add dish</button>
+
+</form>

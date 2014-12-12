@@ -1,0 +1,12 @@
+<div id="login">
+<form ng-submit="userLogIn(user.username, user.password)">
+  <input type="text" ng-model="user.username" placeholder="name" ng-required="true">
+  <input type="password" ng-model="user.password" placeholder="password">
+  <button>login</button>
+</form>
+<div class="reg">
+  <span>Not a Member?</span>
+  <a href="#/register"><button>sign up</button></a>
+</div>
+
+</div>

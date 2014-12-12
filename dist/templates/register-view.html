@@ -1,0 +1,24 @@
+<h2>Register</h2>
+<form name-"register-form" id="register-form" ng-submit="registerUser(user) ">
+  <input type="text" ng-model="user.firstName" placeholder="first name">
+  <input type="text" ng-model="user.lastName" placeholder="last name">
+  <input type="text" ng-model="user.username" placeholder="username">
+  <input type="email" ng-model="user.email" placeholder="email">
+  <input type="password" ng-model="user.password" placeholder="password">
+
+  <div class="radio">
+    <div>
+      <input type="radio" ng-model="user.type" value="employer">
+      <span>Looking to hire.</span>
+    </div>
+
+    <div>
+      <input type="radio" ng-model="user.type" value="chef">
+      <span>Looking for work.</span>
+    </div>
+
+
+  </div>
+
+  <button>submit</button>
+</form>
